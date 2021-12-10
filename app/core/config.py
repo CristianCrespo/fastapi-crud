@@ -5,6 +5,7 @@ from functools import lru_cache
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     PROJECT_NAME: str = "Productos de store"
+    
     POSTGRES_SERVER: str = "localhost"
     POSTGRES_USER: str = "fastapi"
     POSTGRES_PASSWORD: str = "123123"
