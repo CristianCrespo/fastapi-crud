@@ -4,8 +4,8 @@ from pydantic import BaseModel, AnyHttpUrl
 # Shared properties
 class PlaceBase(BaseModel):
 
-    name: Optional[str] = None
-    description: Optional[str] = None
+    name: str
+    price: Optional[int] = 0
     image: Optional[AnyHttpUrl]
 
     # Properties to receive on place creation

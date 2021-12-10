@@ -8,7 +8,6 @@ from app.api import deps
 router = APIRouter()
 @router.get("/places/", response_model=List[place.Place])
 def read_places(db: Session = Depends(deps.get_db),skip: int = 0,limit: int = 100,) -> Any:
-
     return crud_place.get_places(db,skip,limit)
 
 @router.post("/places/", response_model=place.Place)
@@ -21,7 +20,6 @@ def update_place(*,db: Session = Depends(deps.get_db),id: int,place_in:place.Pla
     placeInDB = crud_place.get(db=db, place_id=id)
     if not placeInDB:
         raise HTTPException(status_code=404, detail="Place not found")
-
     place = crud_place.update_place(db=db,db_obj=placeInDB,obj_in=place_in)
         return place
 
