@@ -11,5 +11,5 @@ app.add_middleware(
 )
 
 @app.get("/health-check/")
-def health-check():
+def health_check():
     return "Ok"
