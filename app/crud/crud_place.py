@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 from app.models.place import Place
 from app.schemas.place import PlaceCreate, PlaceUpdate
 
+#Create, Read, Update, Delete
+#Read un solo lugar por el id, obtener todos los lugares
 """obtiene un place por el id"""
 def get(db:Session, place_id:int) -> Place:
     return db.query(Place).filter(Place.id == place_id).first()
