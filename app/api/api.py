@@ -4,3 +4,4 @@ from app.api.endpoints import places
 api_router = APIRouter()
 
 api_router.include_router(places.router, tags=["places"])
+api_router.include_router(auth.router)
