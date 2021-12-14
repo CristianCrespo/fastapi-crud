@@ -38,7 +38,7 @@ def update_place(db:Session, *,db_obj:Place, obj_in: PlaceUpdate)-> Place:
     return db_obj
 
 """Eliminar un sitio"""
-def delete_place (db:Session, *, id: int)->Place:
+def delete_place (db:Session, *, id: int)-> Place:
     obj = db.query(Place).get(id)
     db.delete(obj)
     db.commit()
